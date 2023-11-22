@@ -1,11 +1,19 @@
 from flask import Flask, render_template, request
 import nltk
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-
-nltk.download('vader_lexicon')
+import joblib
+#import pickle
+#nltk.download('vader_lexicon')
 
 app = Flask(__name__, static_url_path='/static')
 sid = SentimentIntensityAnalyzer()
+# with open('logreg.pkl','rb')as file:
+#     #model = pickle.load('logreg.pkl')
+#     x = pickle.Unpickler(file)
+#     #s = x.load()
+#     print(x)
+
+# model = joblib.load('path_to_your_joblib_model_file') #replace with model location 
 
 @app.route('/')
 def index():
@@ -24,8 +32,8 @@ def get_sentiment(scores):
         return 'Positive'
     elif scores['compound'] <= -0.05:
         return 'Negative'
-    else:
-        return 'Neutral'
+    # else:
+    #     return 'Neutral'
 
 if __name__ == '__main__':
     app.run(debug=True)
