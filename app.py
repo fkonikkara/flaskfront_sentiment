@@ -4,7 +4,7 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 
 nltk.download('vader_lexicon')
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 sid = SentimentIntensityAnalyzer()
 
 @app.route('/')
