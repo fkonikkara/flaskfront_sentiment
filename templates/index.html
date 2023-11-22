@@ -2,13 +2,14 @@
 <html>
 <head>
     <title>Sentiment Analysis</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="static/styles.css">
+    <link rel="stylesheet" href="static/form.css">
 </head>
 <body>
     <h1>Sentiment Analysis</h1>
     <form action="/analyze" method="post">
         <label for="review">Enter your review:</label>
+        
         <textarea id="review" name="review" placeholder="Type your review here..." rows="4" required></textarea>
         <input type="submit" value="Analyze">
     </form>
