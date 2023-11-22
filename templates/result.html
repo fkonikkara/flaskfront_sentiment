@@ -2,12 +2,13 @@
 <html>
 <head>
     <title>Analysis Result</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <h1>Analysis Result</h1>
-    <p>Review: {{ review }}</p>
-    <p>Sentiment: {{ sentiment }}</p>
+    <div class="result-container">
+        <p><strong>Review:</strong><br>{{ review }}</p>
+        <p><strong>Sentiment:</strong> {{ sentiment }}</p>
+    </div>
 </body>
 </html>
